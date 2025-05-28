@@ -54,6 +54,16 @@
 	{{ block "head" . }}{{ partials.Include "head-additions.html" . }}{{ end }}
   </head>
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G06FDNRL90"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-G06FDNRL90');
+  </script>
+
   {{- $environment := hugo.Environment | compare.Default "production" -}}
   <body class="ma0 {{ $.Param "body_classes"  | compare.Default "avenir bg-near-white"}} {{ $environment }}">
 
